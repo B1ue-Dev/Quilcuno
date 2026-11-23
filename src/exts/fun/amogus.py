@@ -78,7 +78,7 @@ def make_gif(username, impostor, buf):
     member_avatar.close()
 
     text = (
-        f"{username} was {'The Impostor' if impostor else 'Not The Impostor'}"
+        f"{username} was {'the Impostor' if impostor else 'not The Impostor'}"
     )
     original_stars = random_stars()
     frame_duration = 40
