@@ -288,7 +288,7 @@ def _hard_mode_result(
     ]
 
 
-async def _fetch_save_doc(save_model, user_id: int, user_name: str):
+async def _fetch_save_doc(save_model: wtp_easy_saves | wtp_hard_saves, user_id: int, user_name: str):
     """Fetch the user's save document, creating it if it doesn't exist yet.
 
     Replaces the old "exists() query, then a separate find_one() query
@@ -308,7 +308,7 @@ async def _fetch_save_doc(save_model, user_id: int, user_name: str):
     return user_data
 
 
-async def _save_score(user_data, cnt: int, divisor: int = 10) -> int:
+async def _save_score(user_data: wtp_easy_saves | wtp_hard_saves, user_name: str, cnt: int, divisor: int = 10) -> int:
     """Add points/history for a finished round onto an already-fetched save doc.
 
     :param user_data: The user's save document (wtp_easy_saves / wtp_hard_saves instance).
@@ -316,6 +316,8 @@ async def _save_score(user_data, cnt: int, divisor: int = 10) -> int:
     :param divisor: Streak bonus divisor (10 for easy mode, 5 for hard mode).
     :return: The score gained this round.
     """
+
+    user_data.user_name = user_name
 
     total_score = cnt * 10 + (cnt // divisor) * 10
 
@@ -475,7 +477,7 @@ class WTP(interactions.Extension):
                         # Calculating point
                         if point_eligible:
                             total_score = await _save_score(
-                                save_doc, cnt, divisor=10
+                                save_doc, ctx.user.username, cnt, divisor=10
                             )
 
                             await res.ctx.edit_origin(
@@ -521,7 +523,7 @@ class WTP(interactions.Extension):
                         ]
                         if point_eligible:
                             total_score = await _save_score(
-                                save_doc, cnt, divisor=10
+                                save_doc, ctx.user.username, cnt, divisor=10
                             )
 
                             await res.ctx.edit_origin(
@@ -566,7 +568,7 @@ class WTP(interactions.Extension):
                     try:
                         if point_eligible:
                             total_score = await _save_score(
-                                save_doc, cnt, divisor=10
+                                save_doc, ctx.user.username, cnt, divisor=10
                             )
 
                             await msg.edit(
@@ -679,7 +681,7 @@ class WTP(interactions.Extension):
                         # Calculating point
                         if point_eligible:
                             total_score = await _save_score(
-                                save_doc, cnt, divisor=5
+                                save_doc, ctx.user.username, cnt, divisor=5
                             )
 
                             await res.ctx.edit_origin(
@@ -766,7 +768,7 @@ class WTP(interactions.Extension):
                             # Calculating point
                             if point_eligible:
                                 total_score = await _save_score(
-                                    save_doc, cnt, divisor=5
+                                    save_doc, ctx.user.username, cnt, divisor=5
                                 )
 
                                 await _res.edit(
@@ -807,7 +809,7 @@ class WTP(interactions.Extension):
                     try:
                         if point_eligible:
                             total_score = await _save_score(
-                                save_doc, cnt, divisor=5
+                                save_doc, ctx.user.username, cnt, divisor=5
                             )
 
                             await msg.edit(
