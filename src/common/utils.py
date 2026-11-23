@@ -210,6 +210,9 @@ class Permissions(Enum):
     USE_EXTERNAL_SOUNDS = 45
     SEND_VOICE_MESSAGES = 46
     SEND_POLLS = 49
+    USE_EXTERNAL_APPS = 50
+    PIN_MESSAGES = 51
+    BYPASS_SLOWMODE = 52
 
 
 # https://discord.com/developers/docs/topics/permissions#permissions
