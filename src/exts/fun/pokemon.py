@@ -195,11 +195,7 @@ class PKMCommand(interactions.Extension):
             return await ctx.send(
                 "Pokemon not found. Please try again.", ephemeral=True
             )
-        name = data[name_lower]["name"] + (
-            " (Hey, that's me!)"
-            if data[name_lower]["name"] == "Articuno"
-            else ""
-        )
+        name = data[name_lower]["name"]
         id = pkm.num
         types = ", ".join(pkm.types)
         stats = "".join(
