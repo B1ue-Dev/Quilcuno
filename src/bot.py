@@ -30,7 +30,7 @@ from src.common.models import (
 )
 from src.common.task import shutdown_tasks, start_task
 from src.common.utils import get_response
-from src.const import LOG_CHANNEL, MONGO_DB_URL, TOKEN, VERSION
+from src.const import LOG_CHANNEL, MONGO_DB_NAME, MONGO_DB_URL, TOKEN, VERSION
 
 
 class Init:
@@ -124,7 +124,6 @@ client = interactions.Client(
     send_command_tracebacks=False,
     logger=Init.logger_config(),
     voice_state_cache=interactions.utils.NullCache(),
-    role_cache=interactions.utils.NullCache(),
 )
 prefixed_setup(client, default_prefix="$")
 hybrid_setup(client)
