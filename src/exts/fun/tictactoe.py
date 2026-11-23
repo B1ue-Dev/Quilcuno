@@ -430,7 +430,7 @@ class TicTacToe(interactions.Extension):
         board = board_state(components)
 
         # Easy mode
-        # Articuno will get all possible moves, and use the random
+        # Quilcuno will get all possible moves, and use the random
         # module to get a position.
         if ctx.message.content.find("easy mode") != -1:
             if board[button_pos[0]][button_pos[1]] == GameState.empty:
@@ -444,7 +444,7 @@ class TicTacToe(interactions.Extension):
                 return
 
         # Medium mode
-        # Articuno will random between random move or minimax
+        # Quilcuno will random between random move or minimax
         # to get a position.
         elif ctx.message.content.find("medium mode") != -1:
             if board[button_pos[0]][button_pos[1]] == GameState.empty:
@@ -476,7 +476,7 @@ class TicTacToe(interactions.Extension):
                 return
 
         # Hard mode
-        # Articuno will use minimax to make sure that the game will
+        # Quilcuno will use minimax to make sure that the game will
         # never be a win for the player.
         elif ctx.message.content.find("hard mode") != -1:
             if board[button_pos[0]][button_pos[1]] == GameState.empty:

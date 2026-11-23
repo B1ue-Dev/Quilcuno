@@ -23,12 +23,12 @@ class Stats(interactions.Extension):
             interactions.Button(
                 style=interactions.ButtonStyle.LINK,
                 label="Site",
-                url="https://blue.is-a.dev/Articuno",
+                url="https://blue.is-a.dev/Quilcuno",
             ),
             interactions.Button(
                 style=interactions.ButtonStyle.LINK,
                 label="GitHub",
-                url="https://github.com/B1ue-Dev/Articuno",
+                url="https://github.com/B1ue-Dev/Quilcuno",
             ),
             interactions.Button(
                 style=interactions.ButtonStyle.LINK,
@@ -39,10 +39,10 @@ class Stats(interactions.Extension):
 
     @interactions.slash_command(
         name="stats",
-        description="Shows the stats of Articuno.",
+        description="Shows the stats of Quilcuno.",
     )
     async def stats(self, ctx: interactions.SlashContext) -> None:
-        """Shows the stats of Articuno."""
+        """Shows the stats of Quilcuno."""
 
         proc: "psutil.Process" = psutil.Process()
         mem: str = (
@@ -106,9 +106,9 @@ class Stats(interactions.Extension):
             icon_url=f"{ctx.user.avatar.url}",
         )
         embed = interactions.Embed(
-            title="Articuno Stats",
+            title="Quilcuno Stats",
             color=0x7CB7D3,
-            url="https://blue.is-a.dev/Articuno",
+            url="https://blue.is-a.dev/Quilcuno",
             footer=footer,
             thumbnail=thumbnail,
             fields=fields,

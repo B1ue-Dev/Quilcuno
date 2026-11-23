@@ -93,15 +93,15 @@ class RPS(interactions.Extension):
         base_description="Play a game of Rock-Paper-Scissors.",
         aliases=["rps"],
         name="ai",
-        description="Play against Articuno.",
+        description="Play against Quilcuno.",
     )
     async def ai(self, ctx: HybridContext) -> None:
-        """Play against Articuno."""
+        """Play against Quilcuno."""
 
         rps_selection.disabled = False
 
         msg = await ctx.send(
-            content=f"{ctx.user.mention} vs **Articuno**",
+            content=f"{ctx.user.mention} vs **Quilcuno**",
             components=rps_selection,
             allowed_mentions={"users": []},
         )
@@ -129,7 +129,7 @@ class RPS(interactions.Extension):
                 content: list[str] = [
                     f"{res.ctx.user.mention} chose ",
                     f"**{self.choice_convert[user_choice]}**.\n",
-                    "**Articuno** chose ",
+                    "**Quilcuno** chose ",
                     f"**{self.choice_convert[bot_choice]}**.\n",
                 ]
 
@@ -138,7 +138,7 @@ class RPS(interactions.Extension):
                 elif result is True:
                     content.append(f"> {res.ctx.user.mention} `WON`!")
                 elif result is False:
-                    content.append("> **Articuno** `WON`!")
+                    content.append("> **Quilcuno** `WON`!")
 
                 await res.ctx.edit_origin(
                     content="".join(content),

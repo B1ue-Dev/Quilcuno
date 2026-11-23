@@ -83,7 +83,7 @@ class Help(interactions.Extension):
                             " and slash command (the new `/`<name> way).\n",
                             "If a command has the ***** symbol, it supports the ",
                             "new Discord user-installable command and you can use ",
-                            "it anywhere, even that server doesn't have Articuno.",
+                            "it anywhere, even that server doesn't have Quilcuno.",
                         ]
                     ),
                     color=0x7CB7D3,

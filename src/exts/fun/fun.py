@@ -106,7 +106,7 @@ class Fun(interactions.Extension):
 
         url: str = "https://icanhazdadjoke.com"
         headers: dict = {
-            "User-Agent": "Articuno (https://github.com/B1ue-Dev/Articuno)",
+            "User-Agent": "Quilcuno (https://github.com/B1ue-Dev/Quilcuno)",
             "Accept": "application/json",
         }
         resp: dict = await get_response(
@@ -238,7 +238,7 @@ class Fun(interactions.Extension):
 
     @hybrid_slash_command(
         name="ai",
-        description="Chat with Articuno (experimental)",
+        description="Chat with Quilcuno (experimental)",
         options=[
             interactions.SlashCommandOption(
                 type=interactions.OptionType.STRING,
@@ -268,11 +268,11 @@ class Fun(interactions.Extension):
             await ctx.send(resp["response"])
         else:
             msg = [
-                "Articuno used Mist! The path is obscured... try again?",
+                "Quilcuno used Mist! The path is obscured... try again?",
                 "A wild error appeared! Try another move.",
-                "Articuno's Ice Beam missed! Wanna give it another shot?",
+                "Quilcuno's Ice Beam missed! Wanna give it another shot?",
                 "The frosty winds blocked the command. Try once more.",
-                "Articuno is confused... It hurt itself in the process. Try again?",
+                "Quilcuno is confused... It hurt itself in the process. Try again?",
                 "The cold void answered nothing. Try summoning again?",
             ]
             await ctx.send(random.choice(msg))

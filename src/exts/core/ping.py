@@ -17,10 +17,10 @@ class Ping(interactions.Extension):
 
     @interactions.slash_command(
         name="ping",
-        description="Ping Articuno.",
+        description="Ping Quilcuno.",
     )
     async def ping(self, ctx: interactions.SlashContext) -> None:
-        """Ping Articuno."""
+        """Ping Quilcuno."""
 
         websocket: int = int(f"{self.client.latency * 1000:.0f}")
         color: int = 0

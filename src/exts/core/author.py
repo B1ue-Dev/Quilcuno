@@ -21,15 +21,15 @@ class Author(interactions.Extension):
     def __init__(self, client: interactions.Client) -> None:
         self.client: interactions.Client = client
         self.topgg: str = "https://top.gg/bot/809084067446259722"
-        self.github: str = "https://github.com/B1ue-Dev/Articuno"
+        self.github: str = "https://github.com/B1ue-Dev/Quilcuno"
         self.invite_url: str = "https://discord.com/oauth2/authorize?client_id=809084067446259722&permissions=1644905889023&scope=bot%20applications.commands"
 
     @interactions.slash_command(
         name="about",
-        description="Information about Articuno.",
+        description="Information about Quilcuno.",
     )
     async def about(self, ctx: interactions.SlashContext) -> None:
-        """Information about Articuno."""
+        """Information about Quilcuno."""
 
         button = [
             interactions.Button(
@@ -50,16 +50,16 @@ class Author(interactions.Extension):
         ]
 
         embed = interactions.Embed(
-            title="About Articuno",
+            title="About Quilcuno",
             description="".join(
                 [
-                    "Articuno is a multi-purpose Discord Bot that can do a wide range of jobs, mostly with different fun commands. ",
-                    "Highlight commands, such as `/img`, `/tag`, `/emoji`, `/whos_that_pokemon`, etc. The goal of Articuno is to ",
+                    "Quilcuno is a multi-purpose Discord Bot that can do a wide range of jobs, mostly with different fun commands. ",
+                    "Highlight commands, such as `/img`, `/tag`, `/emoji`, `/whos_that_pokemon`, etc. The goal of Quilcuno is to ",
                     "make your server a better place, with different fun commands in any possible way.",
-                    "\n\nArticuno is now under maintenance mode, meaning it should be bug-free. ",
+                    "\n\nQuilcuno is now under maintenance mode, meaning it should be bug-free. ",
                     "If you encounter any issue be sure to use `/invite` and join the support server to report the ",
                     "problem.\n\nWhenever creating tags, bringing joys to members with the most ridiculous or random way, ",
-                    "Articuno has you covered!",
+                    "Quilcuno has you covered!",
                 ]
             ),
             color=0x7CB7D3,
@@ -96,7 +96,7 @@ class Author(interactions.Extension):
         )
         embed = interactions.Embed(
             title="Credits",
-            description="Articuno is being maintained by @b1uedev.\nIf you like Articuno and want to have it online, donate to keep the project alive. Thanks!",
+            description="Quilcuno is being maintained by @b1uedev.\nIf you like Quilcuno and want to have it online, donate to keep the project alive. Thanks!",
             color=0x7CB7D3,
             footer=footer,
         )
@@ -105,10 +105,10 @@ class Author(interactions.Extension):
 
     @interactions.slash_command(
         name="invite",
-        description="Invite Articuno to your server.",
+        description="Invite Quilcuno to your server.",
     )
     async def invite(self, ctx: interactions.SlashContext) -> None:
-        """Invite Articuno to your server."""
+        """Invite Quilcuno to your server."""
 
         buttons = [
             interactions.Button(
@@ -138,10 +138,10 @@ class Author(interactions.Extension):
             icon_url=f"{ctx.user.avatar.url}",
         )
         embed = interactions.Embed(
-            title="Invite Articuno to your server",
+            title="Invite Quilcuno to your server",
             description="".join(
                 [
-                    "Click the button below to invite Articuno to your server.",
+                    "Click the button below to invite Quilcuno to your server.",
                     "\n\nIf you have any questions, feel free to join the support server.",
                 ]
             ),
@@ -152,10 +152,10 @@ class Author(interactions.Extension):
         await ctx.send(embeds=embed, components=buttons)
 
     @interactions.slash_command(
-        name="vote", description="Vote for Articuno on Top-gg."
+        name="vote", description="Vote for Quilcuno on Top-gg."
     )
     async def vote(self, ctx: interactions.SlashContext) -> None:
-        """Vote for Articuno on Top-gg."""
+        """Vote for Quilcuno on Top-gg."""
 
         url: str = "https://top.gg/api/bots/809084067446259722/check"
         headers: dict = {"Authorization": TOPGGAPI}
@@ -174,11 +174,11 @@ class Author(interactions.Extension):
         )
 
         embed = interactions.Embed(
-            title="Vote for Articuno on Top-gg.",
+            title="Vote for Quilcuno on Top-gg.",
             description="".join(
                 [
                     "Thanks for voting. ",
-                    f"""You have voted for Articuno {resp["voted"]} times.""",
+                    f"""You have voted for Quilcuno {resp["voted"]} times.""",
                     " While you get nothing, it helps the bot grow!",
                 ]
             ),

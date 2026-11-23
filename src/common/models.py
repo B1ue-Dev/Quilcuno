@@ -41,7 +41,7 @@ class wtp_hard_saves(Document):
     history: list
 
 
-# Count command use for Articuno
+# Count command use for Quilcuno
 class usage(Document):
     """
     A class for MongoDB Document representing command usage.

@@ -1,7 +1,7 @@
 """
-Utils for Articuno.
+Utils for Quilcuno.
 
-Some parts are shared between Articuno and B1ue.
+Some parts are shared between Quilcuno and B1ue.
 
 (C) 2022-2026 - B1ue-Dev
 """
@@ -20,7 +20,7 @@ from aiohttp import ClientSession
 from src.common.colorthief import ColorThief
 
 """
-Shared function between B1ue and Articuno.
+Shared function between B1ue and Quilcuno.
 These functions must share the same code between both bots.
 """
 
@@ -132,7 +132,7 @@ def rgb_to_int(rgb: tuple[int, int, int]) -> int:
 
 
 """
-Custom functions for Articuno.
+Custom functions for Quilcuno.
 """
 
 
@@ -257,19 +257,19 @@ async def send_promote(ctx: interactions.SlashContext, cmd_type: str):
     async def _send_and_delete():
         topgg_button = interactions.Button(
             style=interactions.ButtonStyle.URL,
-            label="Vote for Articuno",
+            label="Vote for Quilcuno",
             url="https://top.gg/bot/809084067446259722/vote",
         )
         donate_button = interactions.Button(
             style=interactions.ButtonStyle.URL,
-            label="Support Articuno",
+            label="Support Quilcuno",
             url="https://buymeacoffee.com/b1uedev",
         )
         msg = await ctx.send(
             components=[topgg_button, donate_button],
             content="**Like the bot?**\n"
-            "Consider voting the bot on Top.gg, so more people will be able to know Articuno ✨🦅\n"
-            "It's a great way to support Articuno too and help it grow :)\n"
+            "Consider voting the bot on Top.gg, so more people will be able to know Quilcuno 🔥🦅\n"
+            "It's a great way to support Quilcuno too and help it grow :)\n"
             "-# This message will be deleted in 10 seconds.",
         )
 

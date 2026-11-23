@@ -101,9 +101,9 @@ class Init:
     async def get_latest_release_version(
         cls, session: aiohttp.ClientSession
     ) -> str:
-        """Returns the latest version of Articuno on GitHub."""
+        """Returns the latest version of Quilcuno on GitHub."""
 
-        url = "https://api.github.com/repos/B1ue-Dev/Articuno/releases/latest"
+        url = "https://api.github.com/repos/B1ue-Dev/Quilcuno/releases/latest"
         response: dict = await get_response(url, session)
         return response["tag_name"]
 
@@ -144,7 +144,7 @@ async def on_startup() -> None:
         counted = True
     else:
         logging.info(
-            "Articuno is starting up. Please wait, this may take a while."
+            "Quilcuno is starting up. Please wait, this may take a while."
         )
         await asyncio.sleep(60)
         counted = True
@@ -214,7 +214,7 @@ async def on_bot_mentions(_msg: interactions.events.MessageCreate) -> None:
                     f"You can type ``/`` and choose **{client.user.username}**",
                     " to start using me. Alternatively, you can use ",
                     "`$help` or `/help` to see a list of available ",
-                    "commands. Thank you for choosing Articuno.",
+                    "commands. Thank you for choosing Quilcuno.",
                 ],
             ),
             color=0x6AA4C1,
@@ -234,7 +234,7 @@ async def start() -> None:
     client.session = aiohttp.ClientSession()
 
     if debug_system is True:
-        logging.warning("Debug mode for Articuno is enabled.")
+        logging.warning("Debug mode for Quilcuno is enabled.")
     else:
 
         def parse_version(v: str):
@@ -249,14 +249,14 @@ async def start() -> None:
             print(
                 "".join(
                     [
-                        "This Articuno version is not up to date.",
-                        f"Your Articuno version: {VERSION}\n",
+                        "This Quilcuno version is not up to date.",
+                        f"Your Quilcuno version: {VERSION}\n",
                         f"Latest version: {latest_release_version}",
                     ],
                 )
             )
         else:
-            print("You are on latest version. Enjoy using Articuno!")
+            print("You are on latest version. Enjoy using Quilcuno!")
 
     try:
         mongo_client = AsyncMongoClient(
@@ -265,7 +265,7 @@ async def start() -> None:
             uuidRepresentation="standard",
         )
         client.mongo_client = mongo_client
-        client.mongo_db = mongo_client["Articuno"]
+        client.mongo_db = mongo_client[MONGO_DB_NAME]
         await mongo_client.admin.command("ping")
         logging.info("Successfully connected to MongoDB!")
         await init_beanie(

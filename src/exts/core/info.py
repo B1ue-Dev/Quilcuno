@@ -368,7 +368,7 @@ class Info(interactions.Extension):
         guild: interactions.Guild | None = ctx.guild
         if guild is None:
             return await ctx.send(
-                content="Due to Discord limitation, Articuno cannot get the information about this server through user-app/DM command.",
+                content="Due to Discord limitation, Quilcuno cannot get the information about this server through user-app/DM command.",
                 ephemeral=True,
             )
 

@@ -14,12 +14,12 @@ sys.dont_write_bytecode = True
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser("Articuno bot, by B1ueDev (Blue)")
+    parser = argparse.ArgumentParser("Quilcuno bot, by B1ueDev (Blue)")
     parser.add_argument(
         "-d",
         "--debug",
         default=False,
-        help="enable debug mode for Articuno",
+        help="enable debug mode for Quilcuno",
         action="store_true",
     )
     args = parser.parse_args()
